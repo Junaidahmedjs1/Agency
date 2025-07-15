@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Digitrix Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Livvic:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Livvic", sans-serif;
+      }
+      #fill {
+        background: linear-gradient(to top, #940fde 0%, #ffc107 0%);
+        transition: background 0.3s ease;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Navbar -->
+    <header
+      id="navbar"
+      class="fixed top-0 w-full z-50 transition-all duration-600 text-white px-[5%] py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center text-xl font-bold">
+          <img class="w-[5rem]" src="./assests/logo.png" alt="" />
+          <h2 class="text-xl font-bold text-[#940fde]">
+            DIGITRIX <span class="text-[#ffc107]">TECH</span>
+          </h2>
+        </div>
+        <nav>
+          <ul class="flex gap-8 font-medium">
+            <li>
+              <a href="./index.html" class="nav-link hover:text-yellow-400"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="./about.html" class="nav-link hover:text-yellow-400"
+                >About</a
+              >
+            </li>
+            <li class="relative group">
+              <a
+                href="./about.html"
+                class="flex items-center gap-1 nav-link hover:text-yellow-400">
+                Services
+                <span
+                  class="font-bold group-hover:content-['-'] content-['+']"></span>
+              </a>
+              <ul
+                class="absolute top-full left-0 w-52 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-600 translate-y-2 group-hover:translate-y-0 z-[999]">
+                <li>
+                  <a
+                    href="./web-development.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./app-development.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >App Development</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-between px-6 py-2 text-gray-500 cursor-not-allowed">
+                    UI/UX Designing
+                    <span
+                      class="ml-2 text-xs font-semibold bg-yellow-400 text-white px-2 py-0.5 rounded-full"
+                      >Coming Soon</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./seo-optimization.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >SEO Optimization</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./branding-logo.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Branding & Logo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./graphic-design.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Graphic Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./marketing.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Marketing</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./contact.html" class="nav-link hover:text-yellow-400"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="relative bg-black text-white pt-20 pb-[3rem] px-2 md:px-16">
+      <!-- Decorative Left Layer -->
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-[url('./assests/pattern.png')] bg-cover opacity-25"></div>
+
+      <div class="relative z-10 flex flex-col items-center text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-4">
+          Contact
+        </h1>
+        <nav class="text-gray-300 text-sm space-x-2">
+          <a href="index.html" class="hover:text-[#ffc107]">Home</a>
+          <span>/</span>
+          <span class="text-[#ffc107]">Contact</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-20">
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Contact Info & Map -->
+        <div data-aos="fade-right">
+          <h2 class="text-3xl font-bold text-gray-900 mb-2">Contact Details</h2>
+          <div class="w-20 h-1 bg-[#940fde] mb-6"></div>
+
+          <div class="relative w-full h-[250px] rounded shadow overflow-hidden">
+            <!-- Map -->
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7232.847253059446!2d67.06678889349023!3d24.923722178693995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33f857205e5e7%3A0x39312e9a82d28c3c!2sUmer%20Colony%20Korangi%2C%20Karachi%2C%20Sindh!5e0!3m2!1sen!2s!4v1720450866341!5m2!1sen!2s"
+              width="100%"
+              height="100%"
+              class="absolute inset-0 w-full h-full border-0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <!-- Positioned Icon -->
+            <div
+              class="absolute top-[6.5rem] left-[17rem]">
+              <i class="fas fa-map-marker-alt text-[#940fde] text-3xl"></i>
+            </div>
+          </div>
+          <!-- Info Items -->
+          <div class="mt-6 space-y-4 text-sm">
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-map-marker-alt text-[#940fde] text-xl mt-1"></i>
+              <a
+                href="https://www.google.com/maps/place/Umer+Colony+Korangi,+Karachi/"
+                class="hover:underline text-gray-800">
+                56B Umer Colony No 2, Karachi, Pakistan
+              </a>
+            </div>
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-phone-alt text-[#940fde] text-xl mt-1"></i>
+              <p>+92 (343) 3222913</p>
+            </div>
+            <div class="flex items-start space-x-4">
+              <i class="fas fa-clock text-[#940fde] text-xl mt-1"></i>
+              <p>Opening Hours: 10:00 - 6:00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div data-aos="fade-left">
+          <h2 class="text-3xl font-bold text-gray-900 mb-2">
+            How Can We Help You?
+          </h2>
+          <div class="w-20 h-1 bg-[#ffc107] mb-6"></div>
+          <p class="text-sm text-gray-600 mb-6">
+            Get your free case review within 24 hours. All fields are required.
+          </p>
+
+          <form
+            action="mailto:your@email.com"
+            method="POST"
+            enctype="text/plain"
+            class="space-y-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name*"
+              required
+              class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#940fde]" />
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone*"
+              required
+              class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#940fde]" />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email*"
+              required
+              class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#940fde]" />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Message*"
+              required
+              class="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#940fde]"></textarea>
+            <button
+              type="submit"
+              class="bg-[#940fde] hover:bg-[#7e0bc2] text-white px-6 py-3 rounded shadow transition duration-300">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="relative bg-gradient-to-b from-[#e8f0fc] to-white pt-16 pb-8 px-6 sm:px-12 overflow-hidden">
+      <div
+        class="absolute inset-0 z-0 bg-no-repeat bg-cover opacity-[0.3] pointer-events-none"
+        style="background-image: url('./assests/map.png')"></div>
+
+      <div
+        class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <img src="./assests/logo.png" alt="Logo" class="w-[3rem]" />
+            <h2 class="text-xl font-bold text-[#940fde]">
+              DIGITRIX <span class="text-[#ffc107]">TECH</span>
+            </h2>
+          </div>
+          <p class="text-sm text-gray-600">
+            Digitrix Tech: Empowering your digital presence. Expert digital
+            marketing, captivating graphic design, and cutting-edge web and app
+            development solutions.
+          </p>
+          <div class="flex gap-3 mt-5">
+            <a
+              href="#"
+              class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-blue-500 flex items-center justify-center"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-blue-400 flex items-center justify-center"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-pink-500 flex items-center justify-center"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-blue-700 flex items-center justify-center"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- IT Services -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">IT Services</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li><a href="#">Website Development</a></li>
+            <li><a href="#">Mobile App Development</a></li>
+            <li><a href="#">Digital Marketing Strategies</a></li>
+            <li><a href="#">Graphic Designing</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+          <ul class="space-y-3 text-sm text-gray-700">
+            <li class="flex items-center gap-2">
+              <span><i class="fas fa-phone-alt hover:text-red-400"></i></span>
+              (+92) 343 222913
+            </li>
+            <li class="flex items-center gap-2">
+              <span><i class="fas fa-envelope hover:text-[#940fde]"></i></span>
+              support@digitrixtech.com
+            </li>
+            <li class="flex items-center gap-2">
+              <span><i class="fas fa-clock hover:text-[#ffc107]"></i></span>
+              Opening Hours: 10:00 - 6:00
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+          <p class="text-sm text-gray-600 mb-4">
+            Discover What's Trending: Get Engaging News Straight to Your Inbox.
+          </p>
+          <form class="relative">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="w-full rounded-full py-2 px-4 pr-12 text-sm border border-gray-300 focus:outline-none" />
+            <button
+              type="submit"
+              class="absolute right-[0.9px] bottom-[0.9px] bg-[#ffc107] hover:bg-[#e6b700] text-white w-9 h-9 rounded-full transition duration-600">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="relative z-10 mt-12 text-center text-sm text-gray-600">
+        © 2025 All Rights Reserved. Developed By
+        <span class="text-[#940fde] font-medium">DigitrixTech</span>
+      </div>
+      <!-- Back to Top Button -->
+      <button
+        id="backToTop"
+        onclick="scrollToTop()"
+        class="hidden fixed bottom-4 right-4 z-50 font-bold text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition duration-300 overflow-hidden">
+        <i class="fas fa-chevron-up z-10"></i>
+        <div id="fill" class="absolute inset-0 rounded-full z-0"></div>
+      </button>
+    </footer>
+
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/831f7084ef.js"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

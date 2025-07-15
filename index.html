@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hero Section Tailwind</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @layer utilities {
+      @keyframes floatCircle {
+        0% {
+          transform: translate(0, 0);
+        }
+
+        50% {
+          transform: translate(20px, -20px);
+        }
+
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+
+      @keyframes moveDotsRight {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(50px);
+        }
+      }
+
+      @keyframes moveDotsLeft {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50px);
+        }
+      }
+
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        0% {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      .animate-fadeUp {
+        animation: fadeUp 0.8s ease-out forwards;
+      }
+
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+      }
+
+      #fill {
+        background: linear-gradient(to top, #940fde 0%, #ffc107 0%);
+        transition: background 0.3s ease;
+      }
+
+      .dots {
+        position: absolute;
+        width: 13rem;
+        height: 10px;
+        background-image: radial-gradient(#ffc107 20%, transparent 20%);
+        background-size: 18px 18px;
+        z-index: 2;
+      }
+
+      body {
+        font-family: "Livvic", sans-serif;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-white overflow-x-hidden">
+  <!-- Navbar -->
+    <header
+      id="navbar"
+      class="fixed top-0 w-full z-50 transition-all duration-600 text-white px-[5%] py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center text-xl font-bold">
+          <img class="w-[5rem]" src="./assests/logo.png" alt="" />
+          <h2 class="text-xl font-bold text-[#940fde]">
+            DIGITRIX <span class="text-[#ffc107]">TECH</span>
+          </h2>
+        </div>
+        <nav>
+          <ul class="flex gap-8 font-medium">
+            <li>
+              <a href="./index.html" class="nav-link hover:text-yellow-400"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="./about.html" class="nav-link hover:text-yellow-400"
+                >About</a
+              >
+            </li>
+            <li class="relative group">
+              <a
+                href="./about.html"
+                class="flex items-center gap-1 nav-link hover:text-yellow-400">
+                Services
+                <span
+                  class="font-bold group-hover:content-['-'] content-['+']"></span>
+              </a>
+              <ul
+                class="absolute top-full left-0 w-52 bg-white text-black shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-600 translate-y-2 group-hover:translate-y-0 z-[999]">
+                <li>
+                  <a
+                    href="./web-development.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Web Development</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./app-development.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >App Development</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="flex items-center justify-between px-6 py-2 text-gray-500 cursor-not-allowed">
+                    UI/UX Designing
+                    <span
+                      class="ml-2 text-xs font-semibold bg-yellow-400 text-white px-2 py-0.5 rounded-full"
+                      >Coming Soon</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="./seo-optimization.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >SEO Optimization</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./branding-logo.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Branding & Logo</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./graphic-design.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Graphic Design</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./marketing.html"
+                    class="block px-6 py-2 hover:bg-gray-100"
+                    >Marketing</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./contact.html" class="nav-link hover:text-yellow-400"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  <!-- ✅ Hero Section -->
+  <section
+    class="relative flex items-center justify-between h-screen px-[5%] bg-black text-white overflow-hidden pt-20">
+    <!-- Circles -->
+    <div
+      class="absolute top-[15%] left-[10%] w-[70px] h-[70px] bg-gradient-to-r from-[#940fde] to-[#ffc107] rounded-full animate-[floatCircle_5s_ease-in-out_infinite] z-[1]">
+    </div>
+    <div
+      class="absolute bottom-[10%] right-[75%] w-[70px] h-[70px] bg-gradient-to-r from-[#940fde] to-[#ffc107] rounded-full animate-[floatCircle_5s_ease-in-out_infinite] z-[1]">
+    </div>
+    <div
+      class="absolute top-[15%] right-[1%] w-[70px] h-[70px] bg-gradient-to-r from-[#940fde] to-[#ffc107] rounded-full animate-[floatCircle_5s_ease-in-out_infinite] z-[1]">
+    </div>
+
+    <!-- Dots -->
+    <div class="dots right-[500px] bottom-[75px] animate-[moveDotsRight_5s_linear_infinite]"></div>
+    <div class="dots right-[500px] bottom-[60px] animate-[moveDotsRight_5s_linear_infinite]"></div>
+    <div class="dots right-[500px] bottom-[25px] animate-[moveDotsLeft_4s_linear_infinite]"></div>
+    <div class="dots right-[500px] bottom-[10px] animate-[moveDotsLeft_4s_linear_infinite]"></div>
+
+    <!-- Text -->
+    <div class="z-10 max-w-xl">
+      <h1 class="text-5xl font-extrabold leading-tight">
+        <span class="text-[#940fde]">INNOVATE </span> CREATE<br />AND
+        <span class="text-[#ffc107]">ILLUMINATE</span>
+      </h1>
+      <p class="text-gray-300 mt-4">
+        We are committed to fueling startups with our revolutionary
+        technological advancements.
+      </p>
+      <button class="mt-8 px-6 py-3 bg-gradient-to-r from-[#940fde] to-[#ffc107] text-white font-bold rounded-full">
+        <a href="./about.html">MORE ABOUT →</a>
+      </button>
+    </div>
+
+    <!-- Hero Image -->
+    <div
+      class="relative w-[500px] h-[500px] rounded-full bg-gradient-to-r from-[#940fde] to-[#ffc107] overflow-hidden z-10 shrink-0">
+      <img src="./Assests/Image 2.png" alt="Hero Person" class="w-full h-full object-cover rounded-full" />
+    </div>
+
+    <!-- Wave -->
+    <svg class="absolute bottom-0 left-0 w-full h-auto z-[1]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#ffffff" fill-opacity="1"
+        d="M0,160L60,176C120,192,240,224,360,229.3C480,235,600,213,720,181.3C840,149,960,107,1080,85.3C1200,64,1320,64,1380,64L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+      </path>
+    </svg>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div data-aos="fade-up"
+          class="text-center p-6 bg-white shadow rounded-lg transition duration-600 ease-in-out hover:shadow-xl hover:-translate-y-1">
+          <img src="./assests/strategy.png" alt="Application Design" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-semibold text-[#940fde] mb-2">
+            App Development
+          </h3>
+          <p class="text-gray-600">
+            We build modern, scalable mobile and web apps.
+          </p>
+        </div>
+
+
+
+        <!-- Card 2 -->
+        <div data-aos="fade-up" data-aos-delay="200"
+          class="text-center p-6 bg-white shadow rounded-lg transition duration-600 ease-in-out hover:shadow-xl hover:-translate-y-1">
+          <img src="/assests/marketing.png" alt="Social Media" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-semibold text-[#940fde] mb-2">
+            Marketing & Social Media
+          </h3>
+          <p class="text-gray-600">
+            Grow your brand with strategic social media marketing.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div data-aos="fade-up" data-aos-delay="300"
+          class="text-center p-6 bg-white shadow rounded-lg transition duration-600 ease-in-out hover:shadow-xl hover:-translate-y-1">
+          <img src="/assests/service-seo.png" alt="SEO Optimization" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-semibold text-[#940fde] mb-2">
+            SEO Optimization
+          </h3>
+          <p class="text-gray-600">
+            Boost website visibility with expert SEO services.
+          </p>
+        </div>
+
+        <!-- Card 4 -->
+        <div data-aos="fade-up" data-aos-delay="400"
+          class="text-center p-6 bg-white shadow rounded-lg transition duration-600 ease-in-out hover:shadow-xl hover:-translate-y-1">
+          <img src="./assests/branding.png" alt="Cloud Server" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-semibold text-[#940fde] mb-2">
+            Branding & Logo
+          </h3>
+          <p class="text-gray-600">
+            Creative branding, identity design, and custom logos.
+          </p>
+        </div>
+
+        <!-- Card 5 -->
+        <div data-aos="fade-up" data-aos-delay="500"
+          class="text-center p-6 bg-white shadow rounded-lg transition duration-600 ease-in-out hover:shadow-xl hover:-translate-y-1">
+          <img src="/assests/development.png" alt="Data Security" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-semibold text-[#940fde] mb-2">
+            Web Development
+          </h3>
+          <p class="text-gray-600">
+            Responsive, high-performance websites tailored to your needs.
+          </p>
+        </div>
+        <!-- Card 6 -->
+        <div data-aos="fade-up" data-aos-delay="600"
+          class="relative text-center p-6 bg-white shadow rounded-lg transition duration-600 ease-in-out hover:shadow-xl hover:-translate-y-1">
+
+          <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center rounded-lg z-10">
+            <span class="text-[#ffc107] text-lg font-bold">Coming Soon</span>
+          </div>
+
+          <img src="/assests/service-hosting.png" alt="UI/UX Designing" class="h-16 mx-auto mb-4" />
+          <h3 class="text-xl font-semibold text-[#940fde] mb-2">
+            UI/UX Designing
+          </h3>
+          <p class="text-gray-600">
+            Create user-friendly interfaces with a focus on user experience.
+          </p>
+        </div>
+
+      </div>
+  </section>
+
+  <section class="w-full bg-white py-20 px-4 md:px-0">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+      <div class="flex-1 flex items-center justify-center relative min-h-[340px]">
+        <img src="./assests/Image1.jpeg" alt="Team 1" data-aos="fade-down"
+          class="w-[20rem] object-cover rounded-2xl shadow-lg absolute top-0 left-1 z-20" />
+
+        <img src="./assests/Image2.jpeg" alt="Team 2" data-aos="fade-left" data-aos-delay="200"
+          class="w-[20rem] object-cover rounded-2xl shadow-lg absolute top-[2rem] left-[15rem] z-20" />
+
+        <img src="./assests/Image4.jpeg" alt="Team 4" data-aos="fade-up" data-aos-delay="400"
+          class="w-[20rem] object-cover rounded-2xl shadow-lg absolute top-56 left-32 z-10" />
+
+        <div class="md:hidden flex gap-2" data-aos="fade-up">
+          <img src="./assests/Image1.jpeg" class="w-1/4 rounded-xl" />
+          <img src="./assests/Image2.jpeg" class="w-1/4 rounded-xl" />
+          <img src="./assests/Image4.jpeg" class="w-1/4 rounded-xl" />
+        </div>
+      </div>
+
+      <div class="max-w-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="flex-1">
+          <h2 data-aos="fade-right" class="text-4xl md:text-4xl font-extrabold mb-10">
+            We Create Ideas &amp; Policies for Your Company Future
+          </h2>
+
+          <div class="space-y-7">
+            <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="bg-yellow-50 p-3 rounded-xl">
+                <svg class="w-7 h-7 text-yellow-400" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <circle cx="12" cy="12" r="6" />
+                  <circle cx="12" cy="12" r="2" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-lg">Company Mission</div>
+                <div class="text-gray-600">
+                  We aim to empower brands with innovative solutions that
+                  drive growth, impact, and long-term success.
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="bg-pink-50 p-3 rounded-xl">
+                <svg class="w-7 h-7 text-pink-400" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <rect x="2" y="4" width="20" height="14" rx="2" />
+                  <path d="M8 20h8" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-lg">Company Vision</div>
+                <div class="text-gray-600">
+                  To be a trusted digital partner shaping the future of
+                  businesses through creativity and technology.
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="fade-up" data-aos-delay="300">
+              <div class="bg-purple-50 p-3 rounded-xl">
+                <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+              </div>
+              <div>
+                <div class="font-bold text-lg">Our Philosophy</div>
+                <div class="text-gray-600">
+                  We believe in collaboration, transparency, and bold thinking
+                  to deliver meaningful results for every client.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold text-[#940fde] mb-2" data-aos="fade-up">
+        Why Choose Us
+      </h2>
+      <p class="text-[#ffc107] mb-12" data-aos="fade-up" data-aos-delay="100">
+        Smart solutions, reliable results — we build for your success.
+      </p>
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+        <!-- Left side items -->
+        <div class="space-y-10 flex-1">
+          <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="200">
+            <div>
+              <img src="/assests/icon-1.png" alt="" class="w-[8rem]" />
+            </div>
+            <div class="text-left">
+              <h4 class="font-semibold text-lg text-[#940fde]">Experience</h4>
+              <p class="text-gray-600 text-sm">
+                Over 8 years delivering creative, impactful digital solutions
+                for businesses worldwide.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+            <div>
+              <img src="/assests/icon-6.png" alt="" class="w-[8rem]" />
+            </div>
+            <div class="text-left">
+              <h4 class="font-semibold text-lg text-[#940fde]">Products</h4>
+              <p class="text-gray-600 text-sm">
+                Cutting-edge, scalable products tailored to your business
+                goals and future growth.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="400">
+            <div>
+              <img src="/assests/icon-5.png" alt="" class="w-[8rem]" />
+            </div>
+            <div class="text-left">
+              <h4 class="font-semibold text-lg text-[#940fde]">Approach</h4>
+              <p class="text-gray-600 text-sm">
+                A client-first mindset with collaborative strategy and
+                transparent, agile processes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center Image -->
+        <div class="flex-1 flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+          <img src="/assests/features.png" alt="choose us" />
+        </div>
+
+        <!-- Right side items -->
+        <div class="space-y-10 flex-1">
+          <div class="flex items-center gap-4" data-aos="fade-left" data-aos-delay="200">
+            <div>
+              <img src="/assests/icon-4.png" alt="" class="w-[8rem]" />
+            </div>
+            <div class="text-left">
+              <h4 class="font-semibold text-lg text-[#940fde]">Pricing</h4>
+              <p class="text-gray-600 text-sm">
+                Fair, transparent pricing models designed to maximize your
+                return on investment.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="fade-left" data-aos-delay="300">
+            <div>
+              <img src="/assests/icon-3.png" alt="" class="w-[8rem]" />
+            </div>
+            <div class="text-left">
+              <h4 class="font-semibold text-lg text-[#940fde]">Delivery</h4>
+              <p class="text-gray-600 text-sm">
+                Timely, dependable project completion with full after-delivery
+                support services.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4" data-aos="fade-left" data-aos-delay="400">
+            <div>
+              <img src="/assests/icon-2.png" alt="" class="w-[8rem]" />
+            </div>
+            <div class="text-left">
+              <h4 class="font-semibold text-lg text-[#940fde]">Support</h4>
+              <p class="text-gray-600 text-sm">
+                Dedicated 24/7 technical assistance to keep your digital
+                operations running smoothly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">
+        What Our Clients Say
+      </h2>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <!-- Testimonial 1 -->
+          <div class="swiper-slide flex flex-col h-full bg-white p-6 rounded-lg shadow text-center min-h-[420px]">
+            <img src="/assests/client6.jpg" alt="Keena Lara" class="h-20 w-20 rounded-full mx-auto mb-4" />
+            <h3 class="text-xl font-bold text-[#940fde]">Keena Lara</h3>
+            <p class="text-sm text-gray-500 mb-2">Store Owner</p>
+            <div class="text-yellow-400 mb-4">★★★★★</div>
+            <p class="text-gray-600">
+              Digitrix Tech completely revamped my online store. Professional,
+              responsive, and highly recommended!
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="swiper-slide flex flex-col h-full bg-white p-6 rounded-lg shadow text-center min-h-[420px]">
+            <img src="/assests/client3.jpg" alt="Farrah Brandon" class="h-20 w-20 rounded-full mx-auto mb-4" />
+            <h3 class="text-xl font-bold text-[#940fde]">Farrah Brandon</h3>
+            <p class="text-sm text-gray-500 mb-2">Freelancer</p>
+            <div class="text-yellow-400 mb-4">★★★★★</div>
+            <p class="text-gray-600">
+              They built my personal portfolio site fast and beautifully. The
+              modern design truly stands out!
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="swiper-slide flex flex-col h-full bg-white p-6 rounded-lg shadow text-center min-h-[420px]">
+            <img src="/assests/client5.jpg" alt="Jhone Doe" class="h-20 w-20 rounded-full mx-auto mb-4" />
+            <h3 class="text-xl font-bold text-[#940fde]">Jhone Doe</h3>
+            <p class="text-sm text-gray-500 mb-2">CFO, AlphaTech</p>
+            <div class="text-yellow-400 mb-4">★★★★★</div>
+            <p class="text-gray-600">
+              Our company website redesign was handled smoothly,
+              professionally and exceeded expectations.
+            </p>
+          </div>
+
+          <!-- Testimonial 4 -->
+          <div class="swiper-slide flex flex-col h-full bg-white p-6 rounded-lg shadow text-center min-h-[420px]">
+            <img src="/assests/client2.jpg" alt="Sarah Mitchell" class="h-20 w-20 rounded-full mx-auto mb-4" />
+            <h3 class="text-xl font-bold text-[#940fde]">Sarah Mitchell</h3>
+            <p class="text-sm text-gray-500 mb-2">
+              Marketing Head, GreenWave
+            </p>
+            <div class="text-yellow-400 mb-4">★★★★★</div>
+            <p class="text-gray-600">
+              Since they took over our digital strategy, our campaign results
+              have been excellent.
+            </p>
+          </div>
+
+          <!-- Testimonial 5 -->
+          <div class="swiper-slide flex flex-col h-full bg-white p-6 rounded-lg shadow text-center min-h-[420px]">
+            <img src="/assests/client1.jpg" alt="Alex Roy" class="h-20 w-20 rounded-full mx-auto mb-4" />
+            <h3 class="text-xl font-bold text-[#940fde]">Alex Roy</h3>
+            <p class="text-sm text-gray-500 mb-2">
+              Project Manager, Innovanta
+            </p>
+            <div class="text-yellow-400 mb-4">★★★★★</div>
+            <p class="text-gray-600">
+              Professional team with great development skills. Timely delivery
+              and clear communication.
+            </p>
+          </div>
+
+          <!-- Testimonial 6 -->
+          <div class="swiper-slide flex flex-col h-full bg-white p-6 rounded-lg shadow text-center min-h-[420px]">
+            <img src="/assests/client4.jpg" alt="Liam Carter" class="h-20 w-20 rounded-full mx-auto mb-4" />
+            <h3 class="text-xl font-bold text-[#940fde]">Liam Carter</h3>
+            <p class="text-sm text-gray-500 mb-2">CEO, NovaWorks</p>
+            <div class="text-yellow-400 mb-4">★★★★★</div>
+            <p class="text-gray-600">
+              They handled our brand and website launch beautifully. Highly
+              skilled and supportive team.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dots Pagination -->
+        <div class="flex justify-center mt-[4rem]">
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bg-purple-800 w-full mt-[2rem] py-16 px-6 sm:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center">
+      <!-- Left Text Content -->
+      <div class="text-white mb-6 sm:mb-0">
+        <p class="uppercase text-xl font-semibold tracking-wide">
+          Let's Chat
+        </p>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2 leading-tight">
+          Have a Project, Let's Start <br class="hidden sm:block" />
+          Today.
+        </h2>
+      </div>
+
+      <div>
+        <a href="./contact.html"
+          class="bg-gradient-to-r from-[#940fde] to-[#ffc107] text-white font-bold rounded-full px-6 py-3 transition duration-600 hover:from-yellow-400 hover:to-purple-800">
+          CONTACT US
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="relative bg-gradient-to-b from-[#e8f0fc] to-white pt-16 pb-8 px-6 sm:px-12 overflow-hidden">
+    <div class="absolute inset-0 z-0 bg-no-repeat bg-cover opacity-[0.3] pointer-events-none"
+      style="background-image: url('./assests/map.png')"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <img src="./assests/logo.png" alt="Logo" class="w-[3rem]" />
+          <h2 class="text-xl font-bold text-[#940fde]">
+            DIGITRIX <span class="text-[#ffc107]">TECH</span>
+          </h2>
+        </div>
+        <p class="text-sm text-gray-600">
+          Digitrix Tech: Empowering your digital presence. Expert digital
+          marketing, captivating graphic design, and cutting-edge web and app
+          development solutions.
+        </p>
+        <div class="flex gap-3 mt-5">
+          <a href="#"
+            class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-blue-500 flex items-center justify-center"><i
+              class="fab fa-facebook-f"></i></a>
+          <a href="#"
+            class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-blue-400 flex items-center justify-center"><i
+              class="fab fa-twitter"></i></a>
+          <a href="#"
+            class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-pink-500 flex items-center justify-center"><i
+              class="fab fa-instagram"></i></a>
+          <a href="#"
+            class="bg-white shadow w-9 h-9 rounded-full text-gray-600 hover:text-blue-700 flex items-center justify-center"><i
+              class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- IT Services -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">IT Services</h3>
+        <ul class="space-y-2 text-sm text-gray-700">
+          <li><a href="./web-development.html">Website Development</a></li>
+          <li><a href="./app-development.html">Mobile App Development</a></li>
+          <li><a href="./marketing.html">Digital Marketing</a></li>
+          <li><a href="./branding-logo.html">Graphic Designing</a></li>
+          <li><a href="./seo-optimization.html">SEO Optimization</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+        <ul class="space-y-3 text-sm text-gray-700">
+          <li class="flex items-center gap-2">
+            <span><i class="fas fa-phone-alt hover:text-red-400"></i></span>
+            (+92) 343 222913
+          </li>
+          <li class="flex items-center gap-2">
+            <span><i class="fas fa-envelope hover:text-[#940fde]"></i></span>
+            support@digitrixtech.com
+          </li>
+          <li class="flex items-center gap-2">
+            <span><i class="fas fa-clock hover:text-[#ffc107]"></i></span>
+            Opening Hours: 10:00 - 6:00
+          </li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Discover What's Trending: Get Engaging News Straight to Your Inbox.
+        </p>
+        <form class="relative">
+          <input type="email" placeholder="Your email address"
+            class="w-full rounded-full py-2 px-4 pr-12 text-sm border border-gray-300 focus:outline-none" />
+          <button type="submit"
+            class="absolute right-[0.9px] bottom-[0.9px] bg-[#ffc107] hover:bg-[#e6b700] text-white w-9 h-9 rounded-full transition duration-600">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="relative z-10 mt-12 text-center text-sm text-gray-600">
+      © 2025 All Rights Reserved. Developed By
+      <span class="text-[#940fde] font-medium">DigitrixTech</span>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop" onclick="scrollToTop()"
+      class="hidden fixed bottom-4 right-4 z-50 font-bold text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center transition duration-300 overflow-hidden">
+      <i class="fas fa-chevron-up z-10"></i>
+      <div id="fill" class="absolute inset-0 rounded-full z-0"></div>
+    </button>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/831f7084ef.js" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
