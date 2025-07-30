@@ -41,7 +41,7 @@ window.onscroll = function () {
 };
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth"  });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 AOS.init({
@@ -75,3 +75,14 @@ const swiper = new Swiper(".mySwiper", {
     1024: { slidesPerView: 3 },
   },
 });
+window.addEventListener("load", () => {
+  document.getElementById("loaderWrapper").style.display = "none";
+});
+
+// Hamburger Menu
+const menu = document.getElementById("menu");
+const menuBtn = document.getElementById("menu-btn");
+const closeBtn = document.getElementById("close-btn");
+
+menuBtn.addEventListener("click", () => menu.classList.remove("hidden"));
+closeBtn.addEventListener("click", () => menu.classList.add("hidden"));
