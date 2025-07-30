@@ -37,6 +37,31 @@
             transform: translateY(0);
           }
         }
+        .dots {
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background: #ffc107;
+          border-radius: 50%;
+        }
+
+        @keyframes moveDotsRight {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(50px);
+          }
+        }
+
+        @keyframes moveDotsLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50px);
+          }
+        }
         @keyframes l5 {
           0% {
             inset: 0 35px 35px 0;
@@ -894,6 +919,26 @@
       </button>
     </footer>
 
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          0: { slidesPerView: 1 },
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        },
+      });
+    </script>
     <script
       src="https://kit.fontawesome.com/831f7084ef.js"
       crossorigin="anonymous"></script>

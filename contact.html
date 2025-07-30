@@ -18,6 +18,62 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      #loaderWrapper {
+        position: fixed;
+        inset: 0;
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+      .loader {
+        width: 65px;
+        aspect-ratio: 1;
+        position: relative;
+      }
+      .loader:before,
+      .loader:after {
+        content: "";
+        position: absolute;
+        border-radius: 50px;
+        box-shadow: 0 0 0 3px inset #ffc107;
+        animation: l5 2.5s infinite;
+      }
+      .loader:after {
+        animation-delay: -1.25s;
+        border-radius: 0;
+        box-shadow: 0 0 0 3px inset #940fde;
+      }
+      @keyframes l5 {
+        0% {
+          inset: 0 35px 35px 0;
+        }
+        12.5% {
+          inset: 0 35px 0 0;
+        }
+        25% {
+          inset: 35px 35px 0 0;
+        }
+        37.5% {
+          inset: 35px 0 0 0;
+        }
+        50% {
+          inset: 35px 0 0 35px;
+        }
+        62.5% {
+          inset: 0 0 0 35px;
+        }
+        75% {
+          inset: 0 0 35px 35px;
+        }
+        87.5% {
+          inset: 0 0 35px 0;
+        }
+        100% {
+          inset: 0 35px 35px 0;
+        }
+      }
       body {
         font-family: "Livvic", sans-serif;
       }
@@ -28,7 +84,9 @@
     </style>
   </head>
   <body class="bg-white text-gray-800">
-   <!-- Navbar -->
+    <!-- Loader -->
+    <div id="loaderWrapper"><div class="loader"></div></div>
+    <!-- Navbar -->
     <header
       id="navbar"
       class="fixed top-0 w-full z-50 transition-all duration-600 text-white px-[5%] py-4">
@@ -160,8 +218,7 @@
             </iframe>
 
             <!-- Positioned Icon -->
-            <div
-              class="absolute top-[6.5rem] left-[17rem]">
+            <div class="absolute top-[6.5rem] left-[17rem]">
               <i class="fas fa-map-marker-alt text-[#940fde] text-3xl"></i>
             </div>
           </div>
@@ -235,7 +292,7 @@
       </div>
     </section>
 
-  <footer
+    <footer
       class="relative bg-gradient-to-b from-[#e8f0fc] to-white pt-16 pb-8 px-6 sm:px-12 overflow-hidden">
       <div
         class="absolute inset-0 z-0 bg-no-repeat bg-cover opacity-[0.3] pointer-events-none"
@@ -367,9 +424,10 @@
       </button>
     </footer>
 
-
-  <script src="https://kit.fontawesome.com/831f7084ef.js" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
+    <script
+      src="https://kit.fontawesome.com/831f7084ef.js"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

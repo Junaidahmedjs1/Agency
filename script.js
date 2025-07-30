@@ -57,27 +57,18 @@ AOS.init({
   once: true,
 });
 
-const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  loop: true,
-  autoplay: {
-    delay: 3500,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  },
-});
+
 window.addEventListener("load", () => {
-  document.getElementById("loaderWrapper").style.display = "none";
-});
+        const loader = document.getElementById("loaderWrapper");
+        if (loader) {
+          loader.style.opacity = "1";
+          setTimeout(() => {
+            loader.style.opacity = "0";
+            loader.style.transition = "opacity 0.5s ease";
+            setTimeout(() => loader.style.display = "none", 500);
+          }, 200); // small delay
+        }
+      });
 
 // Hamburger Menu
 const menu = document.getElementById("menu");
